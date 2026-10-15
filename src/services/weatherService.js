@@ -144,7 +144,7 @@ export async function searchWeatherLocations(query) {
 }
 
 export async function getForecastByCoordinates(lat, lon) {
-  const apiKey = process.env.WEATHER_API_KEY;
+  const apiKey = process.env.FORECAST_API_KEY;
 
   if (!apiKey) {
     throw new Error('Weather service is not configured , no api key found');
