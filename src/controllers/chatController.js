@@ -56,7 +56,7 @@ ${isWeatherQuestion(message)
   : 'The user is asking a general question. You have the current weather data for their location available. Use this context if relevant to their question.'}`;
 
     const response = await ai.models.generateContent({
-      model: 'gemini-3.5-flash-lite',
+      model: 'gemini-2.0-flash-exp',
       contents: enhancedPrompt
     });
 
