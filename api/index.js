@@ -3,7 +3,11 @@ import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import mongoose from 'mongoose';
-import farmerGPTRoutes from '../../src/routes/farmerGPTRoutes.js';
+import authRoutes from '../src/routes/authRoutes.js';
+import chatRoutes from '../src/routes/chatRoutes.js';
+import chatHistoryRoutes from '../src/routes/chatHistoryRoutes.js';
+import farmerGPTRoutes from '../src/routes/farmerGPTRoutes.js';
+import weatherRoutes from '../src/routes/weatherRoutes.js';
 
 const app = express();
 const clientOrigin = process.env.CLIENT_ORIGIN || '*';
@@ -15,6 +19,10 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 
+app.use('/api/auth', authRoutes);
+app.use('/api/chat-history', chatHistoryRoutes);
+app.use('/api/weather', weatherRoutes);
+app.use('/api/chat', chatRoutes);
 app.use('/api/farmer-gpt', farmerGPTRoutes);
 
 if (process.env.MONGODB_URI) {
