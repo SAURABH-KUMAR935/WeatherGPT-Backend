@@ -3,11 +3,11 @@ import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import mongoose from 'mongoose';
-import authRoutes from '../src/routes/authRoutes.js';
-import chatRoutes from '../src/routes/chatRoutes.js';
-import chatHistoryRoutes from '../src/routes/chatHistoryRoutes.js';
-import farmerGPTRoutes from '../src/routes/farmerGPTRoutes.js';
-import weatherRoutes from '../src/routes/weatherRoutes.js';
+import authRoutes from './src/routes/authRoutes.js';
+import chatRoutes from './src/routes/chatRoutes.js';
+import chatHistoryRoutes from './src/routes/chatHistoryRoutes.js';
+import farmerGPTRoutes from './src/routes/farmerGPTRoutes.js';
+import weatherRoutes from './src/routes/weatherRoutes.js';
 
 const app = express();
 const clientOrigin = process.env.CLIENT_ORIGIN || '*';
